@@ -8,11 +8,13 @@ import {
 // import './index.css
 
 import Root from './routes/root.jsx';
+import ErrorPage from './error_page.jsx';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
+        errorElement: <ErrorPage />,
     },
 ]);
 
