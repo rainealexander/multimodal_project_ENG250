@@ -5,7 +5,7 @@ import {
     RouterProvider,
 } from 'react-router-dom';
 
-// import './index.css
+import './index.css';
 
 import Root from './routes/root.jsx';
 import ErrorPage from './error_page.jsx';

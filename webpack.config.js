@@ -6,18 +6,23 @@ module.exports = {
     entry: './client/main.jsx',
     output: {
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        assetModuleFilename: 'assets/[hash][ext][query]'
     },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.(js|jsx?|js!)$/i,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
             {
                 test: /\.css$/,
-                use: [ 'style-loader', 'css-loader' ]
+                use: [ 'style-loader', 'css-loader', 'postcss-loader' ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/i,
+                type: 'asset/resource'
             }
         ]
     },
