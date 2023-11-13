@@ -5,6 +5,11 @@ import {
     RouterProvider,
 } from 'react-router-dom';
 
+// Google Analytics
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-WEKK7D0TYB";
+ReactGA.initialize(TRACKING_ID);
+
 import './index.css';
 
 import Root from './routes/root.jsx';
