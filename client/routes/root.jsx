@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/header.jsx";
 import Intro from "../components/intro.jsx";
 import ClientNavigator from "../components/clientNavigator.jsx";
+import IPData from "../components/ipData.jsx";
 
 export default function Root() {
     return (
@@ -13,6 +14,7 @@ export default function Root() {
             <Header />
             <Intro />
             <ClientNavigator />
+            <IPData />
         </>
 
     );
