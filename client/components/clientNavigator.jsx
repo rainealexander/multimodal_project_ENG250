@@ -14,9 +14,21 @@ export default function ClientNavigator() {
     const displayClientData = () => {
         let data = getClientData();
         let dataList = [];
-        for (const key in data) {
-            dataList.push(<li>{key + ': ' + data[key]}</li>)
-        }
+        dataList.push(<li key={'deviceMemory'}>{'Device RAM: ' + data['deviceMemory'] + 'gb'}</li>);
+        dataList.push(<li key={'browserData'}>{'Browser: ' + data['userAgentData']['brands'][0]['brand']}</li>);
+        dataList.push(<li key={'mobileDevice'}>{'Mobile Device: ' + data['userAgentData']['mobile']}</li>);
+        dataList.push(<li key={'devicePlatform'}>{'Platform: ' + data['userAgentData']['platform']}</li>);
+        // for (const key in data) {
+        //    dataList.push(<li key={'key'}>{key + ': ' + JSON.stringify(data[key])}</li>)
+        // }
+        /**
+         * Data to include:
+         * deviceMemory: RAM in gb
+         * userAgentData:
+         *   brands:[0] brand: browser
+         *   mobile: Bool
+         *   platform: OS
+         */
         // for (let i = 0; i < dataEntries.length; i++) {
         //     dataList.push(<li>{dataEntries[i]}</li>);
         //     let innerKeys = Object.keys(data[dataEntries[i]]);
