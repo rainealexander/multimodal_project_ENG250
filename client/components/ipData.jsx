@@ -26,7 +26,7 @@ export default function IPData() {
         console.log('State Data:', data);
         let dataList = [];
         for (const key in data) {
-            dataList.push(<li key={key}>{key + ': ' + JSON.stringify(data[key])}</li>)
+            dataList.push(<li key={key}>{key + ': ' + data[key]}</li>)
         }
         setDataList(dataList);
         setDataLoaded(true);
@@ -34,17 +34,23 @@ export default function IPData() {
 
     if (dataLoaded) {    
         return (
-            <div>
-                <h1>IP Data</h1>
-                <ul>{dataList}</ul>
-            </div>
+            <section className=" p-7 flex flex-col items-center md:p-12">
+                <h1 className=" text-3xl font-bold mb-4">Internet Protocol Address</h1>
+                <p
+                    className=" p-1 m-auto w-11/12 text-lg text-left md:w-5/6 md:text-base"
+                >
+                    The following data is gathered based on your IP address.
+                    If you aren't using a VPN or other masking technology, your IP address can be directly linked to your device and can be used to estimate your location.
+                </p>
+                <ul className="list-disc">{dataList}</ul>
+            </section>
         );
     } else {
         return (
-            <div>
+            <section>
                 <h1>IP Data</h1>
                 <p>DataLoading</p>
-            </div>
+            </section>
         );
     }
 }
