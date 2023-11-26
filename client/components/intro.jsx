@@ -26,7 +26,7 @@ export default function Intro() {
                             Such an innocent term, cookies. It brings to mind a sweet treat paired with a glass of milk, <br/>
                             but in reality what you think is chocolate chip turns out to be... raisin.
                         </p>
-                        <span className=' px-10 py-8 my-8 mx-auto text-xl italic font-mon0 border-2 border-slate-600 rounded-md shadow-md'>
+                        <span className=' px-10 py-8 my-8 mx-auto text-xl italic font-mono border-2 border-slate-600 rounded-md shadow-md'>
                             "This site uses Cookies."
                         </span>
                         <p className=' text-xl text-black md:text-lg'>

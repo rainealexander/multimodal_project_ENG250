@@ -1,7 +1,6 @@
 import axios from "axios";
 import React from "react";
 
-//const IPGEO_API_KEY = process.env.IPGEO_API_KEY;
 
 const baseURL = 'https://api.ipgeolocation.io/ipgeo?apiKey=' + 'TESTAPI123';
 
@@ -10,6 +9,13 @@ export default function IPData() {
     const [dataList, setDataList] = React.useState(null);
     const [dataLoaded, setDataLoaded] = React.useState(false);
     const didMount = React.useRef(false);
+
+    window.addEventListener('scroll', () => {
+        //let back = document.getElementById('header-parallax');
+        let inside = document.getElementById('ip-data');
+        //back.style.transform = 'translateY(-' + (window.pageYOffset * 0.1) + 'px)';
+        inside.style.transform = 'translateY(-' + (window.pageYOffset * 0.15) + 'px)';
+    });
 
     React.useEffect(() => {
         axios.get(baseURL).then((res) => {
@@ -34,7 +40,7 @@ export default function IPData() {
 
     if (dataLoaded) {    
         return (
-            <section className=" p-7 flex flex-col items-center md:p-12">
+            <section id="ip-data" className=" relative h-screen p-7 py-20 flex flex-col items-center md:p-12 md:py-60 bg-slate-100">
                 <h1 className=" text-3xl font-bold mb-4">Internet Protocol Address</h1>
                 <p
                     className=" p-1 m-auto w-11/12 text-lg text-left md:w-5/6 md:text-base"

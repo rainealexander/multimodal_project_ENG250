@@ -1,5 +1,4 @@
 import React from "react";
-import { getClientData } from "../helpers";
 
 const isObjectEnpty = (obj) => {
     return (
@@ -11,49 +10,32 @@ const isObjectEnpty = (obj) => {
 
 export default function ClientNavigator() {
 
+    window.addEventListener('scroll', () => {
+        //let back = document.getElementById('header-parallax');
+        let inside = document.getElementById('client-nav-data');
+        //back.style.transform = 'translateY(-' + (window.pageYOffset * 0.1) + 'px)';
+        inside.style.transform = 'translateY(-' + (window.pageYOffset * 0.15) + 'px)';
+    });
+
     const displayClientData = () => {
-        let data = getClientData();
+        let data = window.navigator;
+        console.log('ClientNavData: ', data);
         let dataList = [];
         dataList.push(<li key={'deviceMemory'}>{'Device RAM: ' + data['deviceMemory'] + 'gb'}</li>);
         dataList.push(<li key={'browserData'}>{'Browser: ' + data['userAgentData']['brands'][0]['brand']}</li>);
         dataList.push(<li key={'mobileDevice'}>{'Mobile Device: ' + data['userAgentData']['mobile']}</li>);
         dataList.push(<li key={'devicePlatform'}>{'Platform: ' + data['userAgentData']['platform']}</li>);
-        // for (const key in data) {
-        //    dataList.push(<li key={'key'}>{key + ': ' + JSON.stringify(data[key])}</li>)
-        // }
-        /**
-         * Data to include:
-         * deviceMemory: RAM in gb
-         * userAgentData:
-         *   brands:[0] brand: browser
-         *   mobile: Bool
-         *   platform: OS
-         */
-        // for (let i = 0; i < dataEntries.length; i++) {
-        //     dataList.push(<li>{dataEntries[i]}</li>);
-        //     let innerKeys = Object.keys(data[dataEntries[i]]);
-        //     if (innerKeys.length > 0) {
-        //         let innerList = Object.entries(data[dataEntries[i]])
-        //         console.log(`InnerList: ${innerList}`)
-        //         for (let j = 0; j < innerList.length; j++) {
-        //             dataList.push(<ul><li>{innerList[j]}</li></ul>);
-        //         }
-        //     }
-        //     //dataList.push(<p>{JSON.stringify(userData[obj])}</p>);
-        //     // dataList.push(<ul>);
-        //     // for (const sub in data[obj]) {
-        //     //     dataList.push(<li>{data[obj][sub]}</li>)
-        //     // }
-        //     // dataList.push(</ul>);
-        // }
+        
         return dataList;
     }
 
     return (
-        <>
-            <ul>
+        <section id='client-nav-data' className=" py-32 relative flex flex-col items-center bg-slate-100">
+            <h1 className=" text-3xl font-bold mb-4">Generic Device Data</h1>
+            <p>The following information is available by default to internet browsers</p>
+            <ul className="list-disc">
                 {displayClientData()}
             </ul>
-        </>
+        </section>
     )
 };
