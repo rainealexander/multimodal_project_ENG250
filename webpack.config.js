@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
     entry: './client/main.jsx',
     output: {
-        path: path.join(__dirname, 'build'),
+        path: path.join(__dirname, ''),
         filename: 'bundle.js',
         assetModuleFilename: 'assets/[hash][ext][query]'
     },

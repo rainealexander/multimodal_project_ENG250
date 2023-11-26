@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "server-dev": "nodemon app.js",
+    "client-dev": "webpack build --watch"
+  },
   "dependencies": {
     "axios": "^1.6.1",
     "cors": "^2.8.5",
@@ -27,9 +31,5 @@
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
-  },
-  "scripts": {
-    "server-dev": "nodemon server/app.js",
-    "client-dev": "webpack build --watch"
   }
 }

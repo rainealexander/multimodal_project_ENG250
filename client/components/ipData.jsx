@@ -14,7 +14,7 @@ export default function IPData() {
         //let back = document.getElementById('header-parallax');
         let inside = document.getElementById('ip-data');
         //back.style.transform = 'translateY(-' + (window.pageYOffset * 0.1) + 'px)';
-        inside.style.transform = 'translateY(-' + (window.pageYOffset * 0.15) + 'px)';
+        inside.style.transform = 'translateY(-' + (window.pageYOffset * 0.25) + 'px)';
     });
 
     React.useEffect(() => {

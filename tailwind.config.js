@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: {
         'dataImg': "url('./components/dataimg.jpg')",
         'cookieJar': "url('./components/cookieJar.jpg')",
+        'phonePic': "url('./components/phonePic.jpg')",
       }
     },
   },
